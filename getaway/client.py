@@ -53,21 +53,21 @@ class Client(object):
 
     def query_pos(self):
         lst = list(self._pos_pool)
-        if lst.count('down_left') > 15:
-            self._zoom_mode = False
-            return 'down_left'
-        elif lst.count('down_right') > 15:
-            self._zoom_mode = False
-            return 'down_right'
-        elif lst.count('turn_left') > 10:
-            self._zoom_mode = False
-            return 'turn_left'
-        elif lst.count('turn_right') > 10:
-            self._zoom_mode = False
-            return 'turn_right'
-        elif lst.count('forward') > 10:
+        if lst.count('forward') > 5:
             self._zoom_mode = True
             return 'forward'
+        elif lst.count('down_left') > 5:
+            self._zoom_mode = False
+            return 'down_left'
+        elif lst.count('down_right') > 5:
+            self._zoom_mode = False
+            return 'down_right'
+        elif lst.count('turn_left') > 15:
+            self._zoom_mode = False
+            return 'turn_left'
+        elif lst.count('turn_right') > 15:
+            self._zoom_mode = False
+            return 'turn_right'
         else:
             self._zoom_mode = False
             return 'none'

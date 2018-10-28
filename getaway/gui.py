@@ -17,7 +17,7 @@ class GUI(Tk):
         self.title('Getaway')
         self.geometry('1800x1000')
         self.resizable(width=False, height=False)
-        self._clients = [Client('Hong'), Client('Ming')]
+        self._clients = [Client('Thai'), Client('Ming')]
         self._screen = None
 
         self.__init_window()
